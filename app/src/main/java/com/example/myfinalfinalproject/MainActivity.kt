@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             val card = cards[i]
             val label = labels[i]
 
+
             // Setup number label
             label.text = numbers[i].toString()
             label.setTextColor(Color.WHITE)
