@@ -46,10 +46,6 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
     }
-
-
-
-
     private fun startGame() {
         startButton.visibility = View.GONE
         exitButton.visibility = View.VISIBLE
