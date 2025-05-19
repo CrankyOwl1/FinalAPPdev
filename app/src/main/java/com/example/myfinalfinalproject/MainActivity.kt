@@ -88,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
         object : CountDownTimer(timeToMemorize, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 timerText.text = "Memorize: ${millisUntilFinished / 1000}s"
