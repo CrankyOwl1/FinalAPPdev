@@ -9,14 +9,26 @@
     tools:context=".MainActivity"
     android:padding="16dp">
 
-    <!-- Timer -->
+    <!-- Game Title TextView -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Memory Number Click"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- 4x4 Grid -->
+    <!-- Timer Text -->
+
+    <!-- GridLayout for game cards -->
 
     <!-- Start Game Button -->
-
-    <!-- Exit Button -->
-
     <TextView
         android:id="@+id/timer_text"
         android:layout_width="wrap_content"
@@ -29,38 +41,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintVertical_bias="0.106" />
 
     <GridLayout
         android:id="@+id/grid_layout"
-        android:layout_width="363dp"
+        android:layout_width="0dp"
         android:layout_height="340dp"
         android:columnCount="4"
         android:rowCount="4"
         android:useDefaultMargins="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/start_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </GridLayout>
+        app:layout_constraintTop_toBottomOf="@id/timer_text" />
 
     <Button
         android:id="@+id/start_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Start Game"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/exit_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921" />
+        app:layout_constraintTop_toBottomOf="@id/grid_layout"
+        app:layout_constraintVertical_bias="0.3" />
 
+    <!-- Exit Game Button -->
     <Button
         android:id="@+id/exit_button"
-        android:layout_width="379dp"
+        android:layout_width="0dp"
         android:layout_height="51dp"
         android:text="Exit"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,33 +82,44 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="254dp"
-        android:layout_height="32dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Memory Number Click"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
-
+    <!-- Try Again Button -->
     <Button
-        android:id="@+id/button2"
-        android:layout_width="373dp"
+        android:id="@+id/tryagain_button"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:text="Try Again"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.835" />
+
+    <!-- Level Progression Buttons (hidden until needed) -->
+    <Button
+        android:id="@+id/next_level_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Level"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/exit_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/start_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="375dp"
+        android:layout_height="51dp"
+        android:text="Reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.921" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
